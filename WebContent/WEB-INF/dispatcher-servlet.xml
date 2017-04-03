@@ -16,7 +16,7 @@
         lazy-init="false">
  
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://192.168.0.27:3306/testdb" />
+        <property name="url" value="jdbc:mysql://192.168.0.27:3306/recordbook" />
         <property name="username" value="root" />
         <property name="password" value="123" />
     </bean> 
