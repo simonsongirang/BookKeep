@@ -19,8 +19,17 @@ public class RecordDAO {
 		this.template = template;
 	}
 	
+	public int credit_save(Record record){
+		return template.update("INSERT INTO records (NAME, CATEGORY, CREDIT, PAYMENT_TYPE, PAYER, NOTE) VALUES(?,?,?,?,?,?)", record.getName(), record.getCategory(), record.getDate(), record.getCredit(), record.getPaymentType(), record.getPayer(), record.getNote());
+	}
+	
+	public int debit_save(Record record){
+		return template.update("INSERT INTO records (NAME, CATEGORY, DEBIT, PAYMENT_TYPE, PAYEE, NOTE) VALUES(?,?,?,?,?,?)", record.getName(), record.getCategory(), record.getDate(), record.getDebit(), record.getPaymentType(), record.getPayer(), record.getNote());
+	}
+	
+	
 	public List<Record> getRecords(){  
-	    return template.query("select * from records",new RowMapper<Record>(){  
+	    return template.query("SELECT * FROM records",new RowMapper<Record>(){  
 	        public Record mapRow(ResultSet rs, int row) throws SQLException {  
 	        	Record e=new Record();  
 	            e.setId(rs.getInt(1));  

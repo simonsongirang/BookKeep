@@ -12,16 +12,43 @@ import org.springframework.web.servlet.ModelAndView;
 import com.recordkeep.model.Record;  
 import com.recordkeep.dao.RecordDAO;
 
-@Controller  
+@Controller
 public class BookController {  
     @Autowired  
     RecordDAO dao;//will inject dao from xml file  
-      
+    
+    
     /* It provides list of employees in model object */  
     @RequestMapping("/viewrecord")  
-    public ModelAndView viewemp(){  
+    public ModelAndView viewrecord(){  
         List<Record> list=dao.getRecords();  
         return new ModelAndView("viewrecord","list",list);  
     }  
+    
+    @RequestMapping("/insertrecord")  
+    public ModelAndView showform(){  
+        return new ModelAndView("insertrecord","command",new Record());  
+    } 
+    
+    @RequestMapping(value="/debit_save",method = RequestMethod.POST)  
+    public ModelAndView debit_save(@ModelAttribute("record") Record record){  
+        dao.debit_save(record);  
+        return new ModelAndView("redirect:/viewemp");//will redirect to viewemp request mapping  
+    }
+    
+    @RequestMapping(value="/credit_save",method = RequestMethod.POST)  
+    public ModelAndView credit_save(@ModelAttribute("record") Record record){  
+        dao.credit_save(record);  
+        return new ModelAndView("redirect:/viewemp");//will redirect to viewemp request mapping  
+    }  
+    
+    
+    @RequestMapping(value="/")
+    public ModelAndView index() {
+        return new ModelAndView("redirect:/viewrecord");
+    }
+  
+    
+
   
 }  

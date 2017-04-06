@@ -13,6 +13,48 @@ public class Record {
 	private String payer;
 	private String note;
 	
+	public int getId(){
+		return this.id;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public String getCategory(){
+		return this.category;
+	}
+	
+	public Date getDate(){
+		return this.date;
+	}
+	
+	public BigDecimal getDebit(){
+		return this.debit;
+	}
+	
+	
+	public BigDecimal getCredit(){
+		return this.credit;
+	}
+	
+	public String getPaymentType(){
+		return this.paymentType;
+	}
+	
+	
+	public String getPayee(){
+		return this.payee;
+	}
+	
+	public String getPayer(){
+		return this.payer;
+	}
+	
+	public String getNote(){
+		return this.note;
+	}
+	
 	public void setId(int id){
 		this.id = id;
 	}
