@@ -15,7 +15,7 @@
 <body>
 <article class=main>
 	<h1>Add Debit Transaction</h1>	
-	<form:form method="post" action="debit_save">
+	<form:form method="POST" action="debitsave">
 		<table>
 			<tr>
 				<th>Name</th>
@@ -34,6 +34,7 @@
 				<td><form:input path="paymentType"/></td>
 				<td><form:input path="payee"/></td>
 				<td><form:input path="note"/></td>
+				<td><input type="submit" value="Save Debit Transaction"/></td>    
 			</tr>
 		</table>
 	</form:form>
@@ -41,43 +42,14 @@
 	
 <article class=main>
 	<h1>Add Credit Transaction</h1>	
-	<form:form method="post" action="credit_save">
+	<form:form method="POST" action="creditsave">
 		<table>
 			<tr>
 				<th>Name</th>
 				<th>Category</th>
 				<th>Date</th>
-				<th>Debit</th>
-				<th>Payment Type</th>
-				<th>Payee</th>
-				<th>Note</th>
-			</tr>
-			<tr>
-				<td><form:input path="name"/></td>
-				<td><form:input path="category"/></td>
-				<td><form:input path="date"/></td>
-				<td><form:input path="debit"/></td>
-				<td><form:input path="paymentType"/></td>
-				<td><form:input path="payee"/></td>
-				<td><form:input path="note"/></td>
-			</tr>
-		</table>
-	</form:form>
-</article>	
-	
-
-	
-	<!-- 
-	<form:form method="post" action="save">
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Category</th>
-				<th>Date</th>
-				<th>Debit</th>
 				<th>Credit</th>
 				<th>Payment Type</th>
-				<th>Payee</th>
 				<th>Payer</th>
 				<th>Note</th>
 			</tr>
@@ -85,16 +57,15 @@
 				<td><form:input path="name"/></td>
 				<td><form:input path="category"/></td>
 				<td><form:input path="date"/></td>
-				<td><form:input path="debit"/></td>
 				<td><form:input path="credit"/></td>
 				<td><form:input path="paymentType"/></td>
-				<td><form:input path="payee"/></td>
 				<td><form:input path="payer"/></td>
 				<td><form:input path="note"/></td>
+				<td><input type="submit" value="Save Credit Transaction" /></td>    
 			</tr>
 		</table>
 	</form:form>
-	 -->
+</article>	
 
 </body>
 </html>

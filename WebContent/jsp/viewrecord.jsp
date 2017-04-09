@@ -38,4 +38,8 @@
    </table>
 </center>
 </article>
+
+<article>
+<a href="insertrecord.jsp">Insert Record</a>
+</article>
 </body>  

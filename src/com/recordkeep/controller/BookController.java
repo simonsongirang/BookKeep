@@ -30,13 +30,13 @@ public class BookController {
         return new ModelAndView("insertrecord","command",new Record());  
     } 
     
-    @RequestMapping(value="/debit_save",method = RequestMethod.POST)  
+    @RequestMapping(value="/debitsave",method = RequestMethod.POST)  
     public ModelAndView debit_save(@ModelAttribute("record") Record record){  
         dao.debit_save(record);  
         return new ModelAndView("redirect:/viewemp");//will redirect to viewemp request mapping  
     }
     
-    @RequestMapping(value="/credit_save",method = RequestMethod.POST)  
+    @RequestMapping(value="/creditsave",method = RequestMethod.POST)  
     public ModelAndView credit_save(@ModelAttribute("record") Record record){  
         dao.credit_save(record);  
         return new ModelAndView("redirect:/viewemp");//will redirect to viewemp request mapping  

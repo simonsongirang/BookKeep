@@ -20,11 +20,13 @@ public class RecordDAO {
 	}
 	
 	public int credit_save(Record record){
-		return template.update("INSERT INTO records (NAME, CATEGORY, CREDIT, PAYMENT_TYPE, PAYER, NOTE) VALUES(?,?,?,?,?,?)", record.getName(), record.getCategory(), record.getDate(), record.getCredit(), record.getPaymentType(), record.getPayer(), record.getNote());
+		System.out.println("CREDIT");
+		return template.update("INSERT INTO records (NAME, CATEGORY, CDATE, CREDIT, PAYMENT_TYPE, PAYER, NOTE) VALUES(?,?,?,?,?,?,?)", record.getName(), record.getCategory(), record.getDate(), record.getCredit(), record.getPaymentType(), record.getPayer(), record.getNote());
 	}
 	
 	public int debit_save(Record record){
-		return template.update("INSERT INTO records (NAME, CATEGORY, DEBIT, PAYMENT_TYPE, PAYEE, NOTE) VALUES(?,?,?,?,?,?)", record.getName(), record.getCategory(), record.getDate(), record.getDebit(), record.getPaymentType(), record.getPayer(), record.getNote());
+		System.out.println("DEBIT");
+		return template.update("INSERT INTO records (NAME, CATEGORY, CDATE, DEBIT, PAYMENT_TYPE, PAYEE, NOTE) VALUES(?,?,?,?,?,?,?)", record.getName(), record.getCategory(), record.getDate(), record.getDebit(), record.getPaymentType(), record.getPayer(), record.getNote());
 	}
 	
 	
